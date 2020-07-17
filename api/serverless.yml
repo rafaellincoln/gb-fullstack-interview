@@ -1,0 +1,48 @@
+service: api
+
+plugins:
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  region: us-east-1
+  environment:
+    DWOLLA_ID: NaNLQThV0l1UgixNX0BgrixvvQjn4Wpt73spB9jOHeZUFZxD3J
+    DWOLLA_SECRET: wvpTGQz2QHtj3chTUfYDIWWYCpldfigS63ejGSifnjrRnuKkdn
+    DWOLLA_ENV: sandbox
+
+functions:
+  getCustomer:
+    handler: services/customers.get
+    description: Get an Customer by ID
+    events:
+      - http:
+          method: get
+          path: customers/{id}
+          cors: true
+  listCustomer:
+    handler: services/customers.list
+    description: List Customers ID
+    events:
+      - http:
+          method: get
+          path: customers
+          cors: true
+  listCustomerFundingSources:
+    handler: services/customers.listCustomerFundingSources
+    description: List Accounts by a Customer ID
+    events:
+      - http:
+          method: get
+          path: customers/{id}/accounts
+          cors: true
+  getFundingSource:
+    handler: services/accounts.get
+    description: Get an Customer by ID
+    events:
+      - http:
+          method: get
+          path: accounts/{id}
+          cors: true
+          

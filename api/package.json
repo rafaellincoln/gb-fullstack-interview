@@ -1,0 +1,35 @@
+{
+  "version": "0.1.0",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=12"
+  },
+  "scripts": {
+    "test": "jest --coverage --silent",
+    "debug": "export SLS_DEBUG=* && node --inspect /usr/local/bin/serverless offline -s dev"
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "name": "api-payments",
+  "author": "Groundbreaker Engineering",
+  "module": "dist/api-payments.esm.js",
+  "devDependencies": {
+    "jest": "^25.4.0",
+    "jest-dynalite": "^1.1.6",
+    "mockdate": "^2.0.5",
+    "serverless-offline": "^6.4.0"
+  },
+  "dependencies": {
+    "dwolla-v2": "^3.1.0",
+    "uuid": "^8.1.0",
+    "yup": "^0.29.1",
+    "jest-cli": "^25.1.0"
+  },
+  "jest": {
+    "preset": "jest-dynalite"
+  }
+}
