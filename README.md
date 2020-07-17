@@ -1,6 +1,6 @@
 
 <div align="center">
-  <img src="https://e6wlgalwjo-flywheel.netdna-ssl.com/wp-content/uploads/2019/06/logox1-opt.png" align="center" width="60">
+  <img src="https://e6wlgalwjo-flywheel.netdna-ssl.com/wp-content/uploads/2019/06/logox1-opt.png" align="center" width="200">
   <h1 align="center">Groundbreaker Engineering Test</h1>
 </div>
 
@@ -12,7 +12,7 @@ This project has one test case you need to make pass.
 
 1. Provide a full functionality that possibilities an ACH transaction between two customers using React + Node API integrated with Dwolla.
 
-We don't expect it'll take you more than three hours to do. If you do submit it without doing everything you'd like to do, then add a TODO file in root with the changes you'd like to make and document any assumptions made during the implementation.
+We don't expect it'll take you more than four hours to do. If you do submit it without doing everything you'd like to do, then add a TODO file in root with the changes you'd like to make and document any assumptions made during the implementation.
 
 ## What we're looking for
 
