@@ -21,7 +21,8 @@ We've setup a base project using Node with [Serverless](https://https://www.serv
 
 What we provide:
 1. A basic structure of the API using the Serverless framework with the customer list working.
-- You may use any frameworks in the API (CloudFront, Terraform, etc..) that you wish, but please ensure you've documented clearly how to install anything that's required to run your solution.
+  - You may use any frameworks in the API (CloudFront, Terraform, etc..) that you wish, but please ensure you've documented clearly how to install anything that's required to run your solution.
+  - The serverless-offline plugin is installed, you can run and debug the application locally using `npm run debug`
 2. A basic React structure showing customers already integrated with the API
 3. A Dwolla Account with the basic requirements already filled, you don't need to care about creating customers and funding sources.
 
