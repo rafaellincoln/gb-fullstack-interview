@@ -6,7 +6,7 @@
   },
   "scripts": {
     "test": "jest --coverage --silent",
-    "debug": "export SLS_DEBUG=* && node --inspect /usr/local/bin/serverless offline -s dev"
+    "debug": "export SLS_DEBUG=* && serverless offline -s dev"
   },
   "prettier": {
     "printWidth": 80,
