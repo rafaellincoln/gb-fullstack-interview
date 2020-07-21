@@ -1,14 +1,22 @@
 import React, { useState } from 'react';
 import { Page, Card, DataTable } from '@shopify/polaris';
 import { Loading } from './components';
+import { getCustomers } from './services/customers'
 
 function App() {
-  const rows = [
-    [1, 'Emerald Silk Gown', 'Paid'],
-    [2, 'Mauve Cashmere Scarf', 'Unpaid'],
-    [3, 'Navy Merino', 'Paid'],
-  ];
+  const [customers, setCustomers] = useState([])
   const [loading, setLoading] = useState(false);
+
+  React.useEffect(() => {
+    const fetchCustomers = async () => {
+      setLoading(true)
+      const newCustomers = await getCustomers()
+      setCustomers(newCustomers)
+      setLoading(false)
+    }
+
+    fetchCustomers()
+  },[])
 
   return (
     <Page title="Customers">
@@ -16,17 +24,25 @@ function App() {
         {loading ? <Loading /> : (
           <DataTable
             columnContentTypes={[
-              'numeric',
+              'text',
+              'text',
               'text',
               'text',
             ]}
             headings={[
               'Id',
+              'Email',
               'Name',
               'Status',
             ]}
-            rows={rows}
-            footerContent={`Showing ${rows.length} of ${rows.length} results`}
+            rows={
+              customers.length > 0 ? customers.map(customer => {
+                const { id, email, firstName, lastName, status} = customer
+                return [ id, email, `${firstName} ${lastName}`,status ]
+              })
+              : []
+            }
+            footerContent={`Showing ${customers.length} of ${customers.length} results`}
           />
         )}
       </Card>
