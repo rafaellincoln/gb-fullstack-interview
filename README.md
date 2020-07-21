@@ -17,18 +17,18 @@ We don’t expect you it will take you more than 4 hours to do so. If you do sub
 ## What we're looking for
 
 We have put together a coding test to measure the following skills: how well you write clear code and understand/write business rules.
-We've setup a base project using Node with [Serverless](https://https://www.serverless.com/) and [React](https://https://reactjs.org/).
+We've setup a base project using Node with [Serverless](https://https://www.serverless.com/) and [React](https://https://reactjs.org/) with [Polaris](https://polaris.shopify.com/).
 
 What we provide:
 1. A basic structure of the API using the Serverless framework with the customer list.
   - You may use any framework in the API (CloudFront, Terraform, etc.) that you wish, but please make sure to clearly document how to install anything that is required to run your solution.
   - The serverless-offline plugin is installed, you can run and debug the application locally using `npm run debug`
-2. A basic React structure showing the customers and already integrated with the API
+2. A basic React structure showing the customers and already integrated with the API.
 3. A Dwolla Account with the necessary elements already filled, you don’t need to worry about creating customers and funding sources.
 
 What we expect:
 
-1. A UI functionality to create a new transaction
+1. A UI functionality using the [Polaris](https://polaris.shopify.com/) components to create a new transaction
 2. A new service on the API responsible for processing transactions
 3. Elegance/simplicity of your solution
 4. Tests are desirable
