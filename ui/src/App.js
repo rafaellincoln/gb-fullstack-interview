@@ -36,13 +36,13 @@ function App() {
               'Status',
             ]}
             rows={
-              customers.length > 0 ? customers.map(customer => {
+              customers?.length > 0 ? customers.map(customer => {
                 const { id, email, firstName, lastName, status} = customer
                 return [ id, email, `${firstName} ${lastName}`,status ]
               })
               : []
             }
-            footerContent={`Showing ${customers.length} of ${customers.length} results`}
+            footerContent={`Showing ${customers?.length} of ${customers?.length} results`}
           />
         )}
       </Card>
