@@ -11,10 +11,11 @@ provider:
     DWOLLA_ID: NaNLQThV0l1UgixNX0BgrixvvQjn4Wpt73spB9jOHeZUFZxD3J
     DWOLLA_SECRET: wvpTGQz2QHtj3chTUfYDIWWYCpldfigS63ejGSifnjrRnuKkdn
     DWOLLA_ENV: sandbox
+    DWOLLA_ACCOUNT_ID: d662b45a-851d-4de9-9bc6-0e74bce2e5ab
 
 functions:
   getCustomer:
-    handler: services/customers.get
+    handler: controllers/customers.get
     description: Get an Customer by ID
     events:
       - http:
@@ -22,7 +23,7 @@ functions:
           path: customers/{id}
           cors: true
   listCustomer:
-    handler: services/customers.list
+    handler: controllers/customers.list
     description: List Customers ID
     events:
       - http:
@@ -30,7 +31,7 @@ functions:
           path: customers
           cors: true
   listCustomerFundingSources:
-    handler: services/customers.listCustomerFundingSources
+    handler: controllers/customers.listCustomerFundingSources
     description: List Accounts by a Customer ID
     events:
       - http:
@@ -38,11 +39,19 @@ functions:
           path: customers/{id}/accounts
           cors: true
   getFundingSource:
-    handler: services/accounts.get
-    description: Get an Customer by ID
+    handler: controllers/accounts.get
+    description: Get root account foundings
     events:
       - http:
           method: get
-          path: accounts/{id}
+          path: account
+          cors: true
+  makeTransfer:
+    handler: controllers/transfer.post
+    description: Make a transfer
+    events:
+      - http:
+          method: post
+          path: transfer
           cors: true
           
