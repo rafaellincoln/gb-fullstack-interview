@@ -7,7 +7,7 @@ import { makeTransfer } from '../../services/transfer';
 export const TransferModal = ({ customerId, open, handleModalSubmit }) => {
   const [foundTo, setFoundsTo] = useState([]);
   const [foundFrom, setFoundsFrom] = useState([]);
-  const [transferValue, setTransferValue] = useState('0');
+  const [transferValue, setTransferValue] = useState('1');
   const [transferTo, setTransferTo] = useState();
   const [transferFrom, setTransferFrom] = useState();
 
@@ -94,6 +94,7 @@ export const TransferModal = ({ customerId, open, handleModalSubmit }) => {
               prefix="$"
               label="Amount to send"
               type="number"
+              min="1"
             />
           </Stack.Item>
           <Stack.Item>

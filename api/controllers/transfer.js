@@ -8,9 +8,9 @@ const TRANSFER_URL = '/transfers';
 
 const schema = yup.object({
   body: yup.object().shape({
-    transferFrom: yup.string().required('ID of found source source'),
-    transferTo: yup.string().required('ID of found source destination'),
-    amountValue: yup.number().required('Amount Value'),
+    transferFrom: yup.string().required('ID of found source source is required'),
+    transferTo: yup.string().required('ID of found source destination is required'),
+    amountValue: yup.number().required('Amount Value is required'),
   })
 });
 
@@ -19,7 +19,7 @@ module.exports.post = async (event, context, callback) => {
 
   try {
     await schema.validate(event);
-    const data = JSON.parse(event.body);
+    const data = event.body.amountValue ? event.body : JSON.parse(event.body);
 
     return await service.post(data);
   } catch (error) {
